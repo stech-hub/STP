@@ -5,8 +5,9 @@ async function sendMessage() {
   if (!text) return;
 
   messages.innerHTML += `
-    <div class="msg user"><b>You:</b><br>${text}</div>
+    <div class="msg user"><b>You</b><br>${text}</div>
   `;
+
   input.value = "";
 
   const res = await fetch("/api/chat", {
@@ -22,7 +23,7 @@ async function sendMessage() {
     .replace(/\n/g, "<br>");
 
   messages.innerHTML += `
-    <div class="msg ai"><b>AkinS AI:</b><br>${formatted}</div>
+    <div class="msg ai"><b>AkinS AI</b><br>${formatted}</div>
   `;
 
   messages.scrollTop = messages.scrollHeight;
