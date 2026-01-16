@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hire Me | Akin S. Sokpah</title>
+
+  <meta name="description" content="Hire Akin S. Sokpah for websites, apps, AI solutions, and tech consulting.">
+  <meta name="author" content="Akin S. Sokpah">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">Akin<span>S.</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="payments.html">Payments</a>
+    <a href="booking.html" class="active">Hire Me</a>
+    <a href="support.html">Support</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Hire Me</h1>
+  <p>Let’s build something powerful together</p>
+</section>
+
+<!-- BOOKING FORM -->
+<section class="section">
+  <h3>Request a Service</h3>
+  <p>Fill the form below and I will respond within 24 hours.</p>
+
+  <form class="form" action="https://formsubmit.co/sokpahakinsaye@gmail.com" method="POST">
+
+    <!-- Disable captcha -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Redirect after submit -->
+    <input type="hidden" name="_next" value="https://stplatform.vercel.app/thankyou.html">
+
+    <label>Full Name</label>
+    <input type="text" name="name" required>
+
+    <label>Email Address</label>
+    <input type="email" name="email" required>
+
+    <label>Phone / WhatsApp</label>
+    <input type="text" name="phone" required>
+
+    <label>Service Needed</label>
+    <select name="service" required>
+      <option value="">-- Select a Service --</option>
+      <option>Website Development</option>
+      <option>Mobile App Development</option>
+      <option>AI / Automation</option>
+      <option>E-commerce Website</option>
+      <option>Booking System</option>
+      <option>Dashboard / Admin Panel</option>
+      <option>Consultation</option>
+      <option>Other</option>
+    </select>
+
+    <label>Project Details</label>
+    <textarea name="message" rows="5" required></textarea>
+
+    <button type="submit" class="btn gold">Submit Request</button>
+  </form>
+</section>
+
+<!-- QUICK CONTACT -->
+<section class="section highlight">
+  <h3>Need Fast Response?</h3>
+  <p>Message me directly on WhatsApp.</p>
+  <a href="https://wa.me/231777789356" target="_blank" class="btn">
+    Chat on WhatsApp
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Akin S. Sokpah. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
