@@ -15,12 +15,22 @@
 </header>
 
 <div class="container chat-box">
-  <h2>AI Website & Code Generator</h2>
+
+  <div class="hero">
+    <h1>AkinS AI</h1>
+    <p>
+      Ask the AI to build websites, apps, dashboards, or generate full code —
+      structured, clean, and production-ready.
+    </p>
+  </div>
 
   <div id="messages" class="messages"></div>
 
-  <input id="prompt" placeholder="Ask AI to build anything..." />
-  <button onclick="sendMessage()">Send</button>
+  <div class="input-row">
+    <input id="prompt" placeholder="Describe what you want to build..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
 </div>
 
 <script src="script.js"></script>
