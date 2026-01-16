@@ -1,0 +1,7 @@
+{
+  "name": "akin-ai-platform",
+  "private": true,
+  "dependencies": {
+    "openai": "^4.0.0"
+  }
+}
