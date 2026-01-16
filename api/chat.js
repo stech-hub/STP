@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
 });
 
 export default async function handler(req, res) {
@@ -12,23 +12,34 @@ export default async function handler(req, res) {
   try {
     const { message } = req.body;
 
-    const response = await client.chat.completions.create({
+    const completion = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       messages: [
         {
           role: "system",
-          content:
-            "You are a professional AI that creates websites, apps, dashboards, and code.",
+          content: `
+You are AkinS AI — a premium AI website and software builder.
+
+RULES:
+- Respond professionally
+- Use clear headings
+- Use bullet points
+- When generating websites:
+  • Explain briefly
+  • Then provide FULL HTML + CSS + JS
+- Always format code using markdown blocks
+- Do NOT greet repeatedly
+- Do NOT mention OpenAI
+`
         },
-        { role: "user", content: message },
-      ],
+        { role: "user", content: message }
+      ]
     });
 
-    return res.status(200).json({
-      reply: response.choices[0].message.content,
+    res.status(200).json({
+      reply: completion.choices[0].message.content
     });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: "AI request failed" });
+  } catch (err) {
+    res.status(500).json({ error: "AI failed" });
   }
 }
