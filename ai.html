@@ -1,53 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>AI Assistant</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Bot</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="navbar">
-  <div class="logo">Akin<span>S.</span></div>
+<header>
   <nav>
     <a href="index.html">Home</a>
-    <a href="ai.html" class="active">AI Bot</a>
+    <a href="ai.html">AI Bot</a>
   </nav>
 </header>
 
-<section class="section">
-  <h3>AI Website & Code Generator</h3>
+<div class="container chat-box">
+  <h2>AI Website & Code Generator</h2>
 
-  <div class="chat-box">
-    <div id="messages"></div>
+  <div class="messages" id="messages"></div>
 
-    <textarea id="prompt" placeholder="Ask AI to create a website, code, app..."></textarea>
-    <button onclick="sendMessage()">Send</button>
-  </div>
-</section>
+  <input id="prompt" placeholder="Ask AI to create a website, app, or code..." />
+  <button onclick="sendMessage()">Send</button>
+</div>
 
-<script>
-async function sendMessage() {
-  const input = document.getElementById("prompt");
-  const messages = document.getElementById("messages");
-
-  const userText = input.value.trim();
-  if (!userText) return;
-
-  messages.innerHTML += `<div class="user">${userText}</div>`;
-  input.value = "";
-
-  const res = await fetch("/api/chat", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message: userText })
-  });
-
-  const data = await res.json();
-  messages.innerHTML += `<div class="ai">${data.reply}</div>`;
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
